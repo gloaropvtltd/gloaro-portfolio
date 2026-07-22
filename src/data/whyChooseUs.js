@@ -1,0 +1,40 @@
+import { BadgeCheck, Headset, ShieldCheck, Users, Zap, Cpu } from "lucide-react";
+
+export const whyChooseUs = [
+  {
+    icon: Users,
+    title: "Experienced Team",
+    description:
+      "Engineers and designers who've shipped production software across industries — not just tutorials.",
+  },
+  {
+    icon: Cpu,
+    title: "Modern Technology",
+    description:
+      "We build on a current, battle-tested stack — no legacy baggage, no outdated frameworks.",
+  },
+  {
+    icon: BadgeCheck,
+    title: "Quality Work",
+    description:
+      "Code reviews, testing, and design QA are built into every sprint, not bolted on at the end.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Security",
+    description:
+      "Secure-by-default architecture, environment isolation, and careful handling of sensitive data.",
+  },
+  {
+    icon: Headset,
+    title: "Support",
+    description:
+      "Real humans, real response times — before, during, and after launch.",
+  },
+  {
+    icon: Zap,
+    title: "Fast Delivery",
+    description:
+      "Structured sprints and clear milestones keep your project moving without cutting corners.",
+  },
+];

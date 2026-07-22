@@ -1,26 +1,229 @@
 @import "tailwindcss";
 
+/* ==========================================================================
+   GLOARO Design System
+   Source of truth: navy + gold pinwheel/globe mark from the official logo.
+   Tailwind v4 is CSS-first — all tokens live here, not in tailwind.config.js.
+   ========================================================================== */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand — Navy (dominant, ~65% of logo) */
+  --color-navy-950: #0a1030;
+  --color-navy-900: #0f1a4a;
+  --color-navy-800: #142263;
+  --color-navy-700: #1a2c7a;   /* primary brand navy */
+  --color-navy-600: #21389a;
+  --color-navy-500: #2b46b8;   /* bright navy — links, gradient end */
+  --color-navy-400: #5568d6;
+  --color-navy-300: #92a0e8;
+  --color-navy-100: #e6e9fb;
+
+  /* Brand — Gold (secondary, ~30% of logo) */
+  --color-gold-900: #6b3f05;
+  --color-gold-800: #925708;
+  --color-gold-700: #c67d0a;
+  --color-gold-600: #e8940c;
+  --color-gold-500: #f2a71b;   /* primary brand gold */
+  --color-gold-400: #f7be4d;
+  --color-gold-300: #fbd98a;
+  --color-gold-100: #fdf0d6;
+
+  /* Neutrals */
+  --color-ink-950: #0a0c14;
+  --color-ink-800: #1b1f2c;
+  --color-ink-600: #4b5566;
+  --color-ink-400: #8891a3;
+  --color-surface-0: #ffffff;
+  --color-surface-50: #f6f7fb;
+  --color-surface-100: #eef0f7;
+  --color-border: #e2e6f0;
+
+  /* Semantic */
+  --background: var(--color-surface-0);
+  --foreground: var(--color-ink-950);
+  --muted: var(--color-ink-600);
+  --primary: var(--color-navy-700);
+  --primary-foreground: #ffffff;
+  --accent: var(--color-gold-500);
+  --accent-foreground: var(--color-ink-950);
+  --danger: #dc2626;
+  --success: #16a34a;
+
+  /* Gradients */
+  --gradient-brand: linear-gradient(135deg, var(--color-navy-800) 0%, var(--color-navy-500) 100%);
+  --gradient-gold: linear-gradient(135deg, var(--color-gold-600) 0%, var(--color-gold-400) 100%);
+  --gradient-mesh: radial-gradient(circle at 15% 20%, color-mix(in srgb, var(--color-navy-500) 35%, transparent) 0%, transparent 55%),
+                   radial-gradient(circle at 85% 15%, color-mix(in srgb, var(--color-gold-500) 30%, transparent) 0%, transparent 50%),
+                   radial-gradient(circle at 50% 100%, color-mix(in srgb, var(--color-navy-700) 25%, transparent) 0%, transparent 60%);
+
+  /* Motion */
+  --ease-brand: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 180ms;
+  --duration-base: 320ms;
+  --duration-slow: 600ms;
 }
 
 @theme inline {
+  --color-navy-950: var(--color-navy-950);
+  --color-navy-900: var(--color-navy-900);
+  --color-navy-800: var(--color-navy-800);
+  --color-navy-700: var(--color-navy-700);
+  --color-navy-600: var(--color-navy-600);
+  --color-navy-500: var(--color-navy-500);
+  --color-navy-400: var(--color-navy-400);
+  --color-navy-300: var(--color-navy-300);
+  --color-navy-100: var(--color-navy-100);
+
+  --color-gold-900: var(--color-gold-900);
+  --color-gold-800: var(--color-gold-800);
+  --color-gold-700: var(--color-gold-700);
+  --color-gold-600: var(--color-gold-600);
+  --color-gold-500: var(--color-gold-500);
+  --color-gold-400: var(--color-gold-400);
+  --color-gold-300: var(--color-gold-300);
+  --color-gold-100: var(--color-gold-100);
+
+  --color-ink-950: var(--color-ink-950);
+  --color-ink-800: var(--color-ink-800);
+  --color-ink-600: var(--color-ink-600);
+  --color-ink-400: var(--color-ink-400);
+  --color-surface-0: var(--color-surface-0);
+  --color-surface-50: var(--color-surface-50);
+  --color-surface-100: var(--color-surface-100);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-border: var(--color-border);
+  --color-danger: var(--danger);
+  --color-success: var(--success);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-geist-sans);
+  --font-heading: var(--font-sora);
+  --font-mono: var(--font-geist-mono);
+
+  --ease-brand: var(--ease-brand);
+  --duration-fast: var(--duration-fast);
+  --duration-base: var(--duration-base);
+  --duration-slow: var(--duration-slow);
+
+  /* Typography scale — responsive via clamp(); registered here so
+     text-hero / text-h1 / text-h2 / text-h3 / text-body-lg / text-small
+     become real Tailwind font-size utilities. */
+  --text-hero: clamp(2.75rem, 5.5vw + 1rem, 5.5rem);
+  --text-h1: clamp(2.25rem, 3.5vw + 1rem, 3.75rem);
+  --text-h2: clamp(1.75rem, 2vw + 1rem, 2.75rem);
+  --text-h3: clamp(1.375rem, 1vw + 1rem, 1.875rem);
+  --text-body-lg: clamp(1.0625rem, 0.3vw + 1rem, 1.25rem);
+  --text-small: 0.875rem;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: var(--font-heading), var(--font-sans), sans-serif;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   Reusable brand utilities
+   ========================================================================== */
+
+.text-gradient-brand {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-gold {
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bg-mesh-brand {
+  background-color: var(--color-navy-950);
+  background-image: var(--gradient-mesh);
+}
+
+.glass-panel {
+  background: color-mix(in srgb, white 8%, transparent);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid color-mix(in srgb, white 15%, transparent);
+}
+
+.glass-panel-light {
+  background: color-mix(in srgb, white 65%, transparent);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid color-mix(in srgb, white 40%, transparent);
+}
+
+.card-surface {
+  background: var(--color-surface-0);
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  transition: transform var(--duration-base) var(--ease-brand),
+              box-shadow var(--duration-base) var(--ease-brand),
+              border-color var(--duration-base) var(--ease-brand);
+}
+
+.card-surface:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-navy-300);
+  box-shadow: 0 20px 40px -20px color-mix(in srgb, var(--color-navy-700) 25%, transparent);
+}
+
+.badge-base {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+  font-size: var(--text-small);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.input-base {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-0);
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  color: var(--foreground);
+  transition: border-color var(--duration-fast) var(--ease-brand),
+              box-shadow var(--duration-fast) var(--ease-brand);
+}
+
+.input-base:focus {
+  outline: none;
+  border-color: var(--color-navy-500);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-navy-500) 15%, transparent);
+}
+
+.modal-surface {
+  background: var(--color-surface-0);
+  border-radius: 1.25rem;
+  box-shadow: 0 30px 80px -20px color-mix(in srgb, var(--color-navy-950) 45%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
