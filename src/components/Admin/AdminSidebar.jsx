@@ -18,6 +18,7 @@ import {
   Share2,
   Star,
   Sun,
+  UserCog,
   Wrench,
 } from "lucide-react";
 import Logo from "@/components/ui/Logo";
@@ -38,6 +39,7 @@ const navItems = [
   { href: "/admin/social-links", label: "Social Links", icon: Share2 },
   { href: "/admin/messages", label: "Messages", icon: MessageSquare },
   { href: "/admin/media", label: "Media", icon: ImageIcon },
+  { href: "/admin/account", label: "Account", icon: UserCog },
 ];
 
 export default function AdminSidebar() {
