@@ -1,27 +1,10 @@
-// Placeholder testimonials — replace with real client reviews before launch.
 export const testimonials = [
   {
-    name: "[Sample] Client Name",
-    role: "Founder",
-    company: "Sample Company Inc.",
+    name: "Vinayaga Ready Mix Concrete",
+    role: "Ready-Mix Concrete Supplier",
+    company: "Kallakurichi, Tamil Nadu",
     review:
-      "GLOARO took our idea from a rough concept to a fully working platform faster than we expected — the communication throughout was excellent.",
-    rating: 5,
-  },
-  {
-    name: "[Sample] Client Name",
-    role: "CTO",
-    company: "Sample Tech Ltd.",
-    review:
-      "Clean code, clear timelines, and a team that actually understood our product. That's rare to find in an agency.",
-    rating: 5,
-  },
-  {
-    name: "[Sample] Client Name",
-    role: "Product Manager",
-    company: "Sample Retail Co.",
-    review:
-      "The design quality alone justified the investment. Our conversion rate improved noticeably after launch.",
+      "GLOARO built us a clean, professional website that makes it easy for customers to check our products and reach out for orders. The whole process, from the first conversation to launch, was smooth and hassle-free.",
     rating: 5,
   },
 ];

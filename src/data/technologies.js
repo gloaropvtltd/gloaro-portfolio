@@ -1,24 +1,33 @@
-import { Code2, Database, Server, Wrench } from "lucide-react";
-
 export const technologyGroups = [
   {
-    category: "Frontend",
-    icon: Code2,
-    items: ["React", "Next.js", "JavaScript", "Tailwind CSS"],
+    title: "Frontend",
+    description: "Fast, accessible interfaces users actually enjoy.",
+    items: ["react", "nextdotjs", "javascript", "tailwindcss"],
   },
   {
-    category: "Backend",
-    icon: Server,
-    items: ["Node.js", "NestJS", "Laravel"],
+    title: "Backend",
+    description: "Reliable APIs and services under the hood.",
+    items: ["nodedotjs", "nestjs", "laravel"],
   },
   {
-    category: "Database",
-    icon: Database,
-    items: ["PostgreSQL", "MySQL"],
+    title: "AI & Automation",
+    description: "Where GLOARO builds beyond typical software — intelligent, model-driven products.",
+    items: ["claude", "googlegemini", "langchain", "python"],
+    featured: true,
   },
   {
-    category: "Tools",
-    icon: Wrench,
-    items: ["Git", "Docker", "Cloud"],
+    title: "Mobile",
+    description: "Native-feel apps from a single, well-engineered codebase.",
+    items: ["flutter", "reactnative"],
+  },
+  {
+    title: "Database",
+    description: "Structured, dependable data storage.",
+    items: ["postgresql", "mysql", "supabase"],
+  },
+  {
+    title: "Cloud & DevOps",
+    description: "Shipped, monitored, and scaled without drama.",
+    items: ["vercel", "aws", "googlecloud", "cloudflare", "docker", "githubactions"],
   },
 ];

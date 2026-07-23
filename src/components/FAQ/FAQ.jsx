@@ -5,10 +5,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Plus } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
-import { faqs } from "@/data/faqs";
 import { easeBrand } from "@/utils/animations";
 
-export default function FAQ() {
+export default function FAQ({ faqs }) {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
@@ -25,7 +24,7 @@ export default function FAQ() {
             const isOpen = openIndex === index;
             return (
               <div
-                key={faq.question}
+                key={faq.id}
                 className="overflow-hidden rounded-2xl border border-border bg-white"
               >
                 <button

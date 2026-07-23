@@ -9,9 +9,10 @@ export const contactInfo = {
 export const contactServiceOptions = [
   "Web Development",
   "Mobile Application Development",
-  "SaaS Development",
   "UI/UX Design",
   "Cloud Solutions",
+  "Custom Software Development",
   "AI Solutions",
+  "Data Engineering",
   "Other",
 ];

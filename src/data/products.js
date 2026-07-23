@@ -1,35 +1,35 @@
-// Placeholder products — replace with GLOARO's real SaaS/internal products and case studies.
-import { LineChart, PackageSearch, Workflow } from "lucide-react";
-
 export const products = [
   {
-    icon: Workflow,
+    icon: "crm",
     status: "Case Study",
-    title: "[Sample] Ops Automation Suite",
-    tagline: "Internal workflow automation product",
+    title: "AI-Powered CRM Customization",
+    tagline: "Custom CRM enhanced with AI",
     description:
-      "Placeholder — replace with a real internal product or case study, including outcomes and metrics.",
-    highlights: ["Workflow builder", "Role-based access", "Audit logging"],
-    link: "#",
+      "A CRM tailored to a sales team's exact pipeline, enhanced with AI-driven lead scoring and automated follow-up suggestions.",
+    highlights: ["Lead scoring", "Pipeline automation", "AI follow-ups"],
+    link: "#contact",
+    image_url: "/products/ai-crm.png",
   },
   {
-    icon: LineChart,
-    status: "Live",
-    title: "[Sample] Insight Analytics",
-    tagline: "SaaS analytics dashboard",
+    icon: "pos",
+    status: "Case Study",
+    title: "POS & Billing System",
+    tagline: "Point-of-sale and billing platform",
     description:
-      "Placeholder — replace with a real SaaS product summary, pricing tier, and live link.",
-    highlights: ["Real-time dashboards", "Custom reports", "Team collaboration"],
-    link: "#",
+      "A point-of-sale and billing platform built for retail and hospitality — inventory sync, invoicing, and real-time sales reporting.",
+    highlights: ["Inventory sync", "Invoicing", "Sales reporting"],
+    link: "#contact",
+    image_url: "/products/pos-billing.png",
   },
   {
-    icon: PackageSearch,
-    status: "Beta",
-    title: "[Sample] Inventory Pilot",
-    tagline: "Internal inventory management tool",
+    icon: "hr",
+    status: "Case Study",
+    title: "HR Management System",
+    tagline: "All-in-one HR platform",
     description:
-      "Placeholder — replace with a real internal tool or client-commissioned product.",
-    highlights: ["Stock tracking", "Low-stock alerts", "Supplier sync"],
-    link: "#",
+      "An all-in-one HR platform covering onboarding, attendance, payroll, and performance reviews in a single dashboard.",
+    highlights: ["Onboarding", "Attendance", "Payroll"],
+    link: "#contact",
+    image_url: "/products/hr-system.png",
   },
 ];

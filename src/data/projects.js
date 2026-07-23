@@ -1,31 +1,49 @@
-export const projectCategories = ["All", "SaaS Platform", "Web App", "Mobile App"];
+export const projectCategories = ["All", "Web App", "SaaS Platform"];
 
 export const projects = [
   {
-    title: "GLOARO Network & GloaroMart",
-    category: "SaaS Platform",
-    description:
-      "A B2B networking and marketplace ecosystem connecting entrepreneurs, investors, and businesses — referral meetings, a verified member directory, events, and an integrated marketplace.",
-    tags: ["Membership Platform", "B2B Marketplace", "Referral Network"],
-    link: "https://www.gloaro.com",
-    featured: true,
-  },
-  {
-    title: "[Sample] Fintech Analytics Dashboard",
+    title: "Corporate Website & CMS Platform",
     category: "Web App",
     description:
-      "Placeholder case study — swap in a real client project, screenshot, and outcome once available.",
-    tags: ["Dashboard", "Analytics", "Fintech"],
-    link: "#",
-    placeholder: true,
+      "A fast, SEO-optimized corporate website with an integrated content management system — built for easy updates without touching code.",
+    tags: ["Website Development", "CMS", "SEO"],
+    link: "#contact",
+    image_url: "/projects/website-cms.png",
   },
   {
-    title: "[Sample] Retail Mobile App",
-    category: "Mobile App",
+    title: "Ecommerce Platform",
+    category: "Web App",
     description:
-      "Placeholder case study — swap in a real client project, screenshot, and outcome once available.",
-    tags: ["Ecommerce", "Mobile"],
-    link: "#",
-    placeholder: true,
+      "A full-featured online storefront with product catalog, cart, secure checkout, and order management built for scale.",
+    tags: ["Ecommerce", "Payments", "Inventory"],
+    link: "#contact",
+    image_url: "/projects/ecommerce.png",
+  },
+  {
+    title: "AI-Powered CRM Customization",
+    category: "SaaS Platform",
+    description:
+      "A CRM tailored to a sales team's exact pipeline, enhanced with AI-driven lead scoring and automated follow-up suggestions.",
+    tags: ["CRM", "AI", "Automation"],
+    link: "#contact",
+    image_url: "/projects/crm-ai.png",
+  },
+  {
+    title: "POS & Billing System",
+    category: "SaaS Platform",
+    description:
+      "A point-of-sale and billing platform built for retail and hospitality — inventory sync, invoicing, and real-time sales reporting.",
+    tags: ["POS", "Billing", "Retail Tech"],
+    link: "#contact",
+    image_url: "/projects/pos-billing.png",
+  },
+  {
+    title: "HR Management System",
+    category: "SaaS Platform",
+    description:
+      "An all-in-one HR platform covering onboarding, attendance, payroll, and performance reviews in a single dashboard.",
+    tags: ["HR Tech", "Payroll", "Workflow"],
+    link: "#contact",
+    image_url: "/projects/hr-system.png",
   },
 ];

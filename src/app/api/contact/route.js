@@ -1,5 +1,6 @@
 import { Resend } from "resend";
 import { isRateLimited } from "@/utils/rateLimit";
+import { sql } from "@/utils/db";
 
 const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 const MAX_LENGTHS = { name: 100, email: 254, company: 100, phone: 30, service: 60, message: 5000 };
@@ -49,6 +50,18 @@ export async function POST(request) {
         { status: 400 }
       );
     }
+  }
+
+  try {
+    await sql`
+      INSERT INTO contact_submissions (name, email, company, phone, service, message)
+      VALUES (${name.trim()}, ${email.trim()}, ${company?.trim() || null}, ${phone?.trim() || null}, ${service?.trim() || null}, ${message.trim()})
+    `;
+  } catch (error) {
+    // Don't block sending the email just because the database isn't
+    // configured yet — persistence is a nice-to-have for the admin
+    // dashboard, not a requirement for the contact form to work.
+    console.error("Failed to persist contact submission:", error);
   }
 
   if (!process.env.RESEND_API_KEY) {

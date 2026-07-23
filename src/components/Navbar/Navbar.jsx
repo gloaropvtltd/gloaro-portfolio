@@ -29,14 +29,14 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-base ease-brand ${
-        scrolled ? "glass-panel-light shadow-[0_8px_30px_-15px_rgba(10,16,48,0.25)]" : "bg-transparent"
+      className={`glass-panel-light fixed inset-x-0 top-0 z-50 transition-shadow duration-base ease-brand ${
+        scrolled ? "shadow-[0_8px_30px_-15px_rgba(10,16,48,0.25)]" : ""
       }`}
     >
       <Container>
         <nav className="flex h-18 items-center justify-between py-4">
-          <a href="#hero" aria-label="GLOARO home">
-            <Logo variant={scrolled ? "dark" : "light"} />
+          <a href="/" aria-label="GLOARO home">
+            <Logo />
           </a>
 
           <ul className="hidden items-center gap-8 lg:flex">
@@ -44,11 +44,7 @@ export default function Navbar() {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className={`text-sm font-medium transition-colors duration-fast ${
-                    scrolled
-                      ? "text-ink-600 hover:text-navy-700"
-                      : "text-white/85 hover:text-gold-300"
-                  }`}
+                  className="text-sm font-medium text-ink-600 transition-colors duration-fast hover:text-navy-700"
                 >
                   {link.label}
                 </a>
@@ -57,12 +53,7 @@ export default function Navbar() {
           </ul>
 
           <div className="hidden lg:block">
-            <Button
-              as="a"
-              href="#contact"
-              variant={scrolled ? "primary" : "gold"}
-              size="sm"
-            >
+            <Button as="a" href="/#contact" variant="primary" size="sm">
               Start a Project
             </Button>
           </div>
@@ -72,11 +63,7 @@ export default function Navbar() {
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((prev) => !prev)}
-            className={`inline-flex h-10 w-10 items-center justify-center rounded-full border lg:hidden ${
-              scrolled
-                ? "border-border text-foreground"
-                : "border-white/30 text-white"
-            }`}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border text-foreground lg:hidden"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -109,7 +96,7 @@ export default function Navbar() {
               <div className="pb-6">
                 <Button
                   as="a"
-                  href="#contact"
+                  href="/#contact"
                   variant="primary"
                   size="md"
                   className="w-full"

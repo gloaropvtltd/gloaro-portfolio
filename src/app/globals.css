@@ -11,9 +11,9 @@
   --color-navy-950: #0a1030;
   --color-navy-900: #0f1a4a;
   --color-navy-800: #142263;
-  --color-navy-700: #1a2c7a;   /* primary brand navy */
+  --color-navy-700: #1a2c7a; /* primary brand navy */
   --color-navy-600: #21389a;
-  --color-navy-500: #2b46b8;   /* bright navy — links, gradient end */
+  --color-navy-500: #2b46b8; /* bright navy — links, gradient end */
   --color-navy-400: #5568d6;
   --color-navy-300: #92a0e8;
   --color-navy-100: #e6e9fb;
@@ -23,7 +23,7 @@
   --color-gold-800: #925708;
   --color-gold-700: #c67d0a;
   --color-gold-600: #e8940c;
-  --color-gold-500: #f2a71b;   /* primary brand gold */
+  --color-gold-500: #f2a71b; /* primary brand gold */
   --color-gold-400: #f7be4d;
   --color-gold-300: #fbd98a;
   --color-gold-100: #fdf0d6;
@@ -50,11 +50,32 @@
   --success: #16a34a;
 
   /* Gradients */
-  --gradient-brand: linear-gradient(135deg, var(--color-navy-800) 0%, var(--color-navy-500) 100%);
-  --gradient-gold: linear-gradient(135deg, var(--color-gold-600) 0%, var(--color-gold-400) 100%);
-  --gradient-mesh: radial-gradient(circle at 15% 20%, color-mix(in srgb, var(--color-navy-500) 35%, transparent) 0%, transparent 55%),
-                   radial-gradient(circle at 85% 15%, color-mix(in srgb, var(--color-gold-500) 30%, transparent) 0%, transparent 50%),
-                   radial-gradient(circle at 50% 100%, color-mix(in srgb, var(--color-navy-700) 25%, transparent) 0%, transparent 60%);
+  --gradient-brand: linear-gradient(
+    135deg,
+    var(--color-navy-800) 0%,
+    var(--color-navy-500) 100%
+  );
+  --gradient-gold: linear-gradient(
+    135deg,
+    var(--color-gold-600) 0%,
+    var(--color-gold-400) 100%
+  );
+  --gradient-mesh:
+    radial-gradient(
+      circle at 15% 20%,
+      color-mix(in srgb, var(--color-navy-500) 35%, transparent) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 85% 15%,
+      color-mix(in srgb, var(--color-gold-500) 30%, transparent) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      color-mix(in srgb, var(--color-navy-700) 25%, transparent) 0%,
+      transparent 60%
+    );
 
   /* Motion */
   --ease-brand: cubic-bezier(0.16, 1, 0.3, 1);
@@ -126,7 +147,11 @@ body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
-h1, h2, h3, h4, .font-heading {
+h1,
+h2,
+h3,
+h4,
+.font-heading {
   font-family: var(--font-heading), var(--font-sans), sans-serif;
   letter-spacing: -0.02em;
   font-weight: 700;
@@ -162,26 +187,32 @@ h1, h2, h3, h4, .font-heading {
   border: 1px solid color-mix(in srgb, white 15%, transparent);
 }
 
-.glass-panel-light {
+/* .glass-panel-light {
   background: color-mix(in srgb, white 65%, transparent);
   backdrop-filter: blur(16px) saturate(160%);
   -webkit-backdrop-filter: blur(16px) saturate(160%);
   border: 1px solid color-mix(in srgb, white 40%, transparent);
+} */
+.glass-panel-light {
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  background: #ffffff;
+  border: 1px solid #fff6;
 }
-
 .card-surface {
   background: var(--color-surface-0);
   border: 1px solid var(--color-border);
   border-radius: 1rem;
-  transition: transform var(--duration-base) var(--ease-brand),
-              box-shadow var(--duration-base) var(--ease-brand),
-              border-color var(--duration-base) var(--ease-brand);
+  transition:
+    transform var(--duration-base) var(--ease-brand),
+    box-shadow var(--duration-base) var(--ease-brand),
+    border-color var(--duration-base) var(--ease-brand);
 }
 
 .card-surface:hover {
   transform: translateY(-4px);
   border-color: var(--color-navy-300);
-  box-shadow: 0 20px 40px -20px color-mix(in srgb, var(--color-navy-700) 25%, transparent);
+  box-shadow: 0 20px 40px -20px
+    color-mix(in srgb, var(--color-navy-700) 25%, transparent);
 }
 
 .badge-base {
@@ -203,24 +234,67 @@ h1, h2, h3, h4, .font-heading {
   padding: 0.75rem 1rem;
   font-size: 1rem;
   color: var(--foreground);
-  transition: border-color var(--duration-fast) var(--ease-brand),
-              box-shadow var(--duration-fast) var(--ease-brand);
+  transition:
+    border-color var(--duration-fast) var(--ease-brand),
+    box-shadow var(--duration-fast) var(--ease-brand);
 }
 
 .input-base:focus {
   outline: none;
   border-color: var(--color-navy-500);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-navy-500) 15%, transparent);
+  box-shadow: 0 0 0 4px
+    color-mix(in srgb, var(--color-navy-500) 15%, transparent);
 }
 
 .modal-surface {
   background: var(--color-surface-0);
   border-radius: 1.25rem;
-  box-shadow: 0 30px 80px -20px color-mix(in srgb, var(--color-navy-950) 45%, transparent);
+  box-shadow: 0 30px 80px -20px
+    color-mix(in srgb, var(--color-navy-950) 45%, transparent);
+}
+
+/* Aurora background — used behind dark, "premium AI" sections */
+@keyframes aurora-drift-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(6%, 8%) scale(1.15); }
+}
+@keyframes aurora-drift-b {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-8%, -4%) scale(1.1); }
+}
+@keyframes aurora-drift-c {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(4%, -6%) scale(1.08); }
+}
+
+.aurora-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  opacity: 0.5;
+  will-change: transform;
+}
+.aurora-blob-1 {
+  animation: aurora-drift-a 22s ease-in-out infinite;
+}
+.aurora-blob-2 {
+  animation: aurora-drift-b 26s ease-in-out infinite;
+}
+.aurora-blob-3 {
+  animation: aurora-drift-c 30s ease-in-out infinite;
+}
+
+.bg-grid-pattern {
+  background-image:
+    linear-gradient(color-mix(in srgb, white 6%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, white 6%, transparent) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

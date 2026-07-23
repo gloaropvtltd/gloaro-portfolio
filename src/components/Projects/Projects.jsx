@@ -2,14 +2,15 @@
 
 import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 import { ArrowUpRight, Layers } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
-import { projectCategories, projects } from "@/data/projects";
+import { projectCategories } from "@/data/projects";
 import { fadeInUp, staggerContainer } from "@/utils/animations";
 import { cn } from "@/utils/cn";
 
-export default function Projects() {
+export default function Projects({ projects }) {
   const [activeCategory, setActiveCategory] = useState("All");
 
   const filtered = useMemo(
@@ -57,7 +58,7 @@ export default function Projects() {
           <AnimatePresence mode="popLayout">
             {filtered.map((project) => (
               <motion.a
-                key={project.title}
+                key={project.id}
                 href={project.link}
                 target={project.link.startsWith("http") ? "_blank" : undefined}
                 rel={project.link.startsWith("http") ? "noreferrer noopener" : undefined}
@@ -67,10 +68,19 @@ export default function Projects() {
                 className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-white transition-all duration-base ease-brand hover:-translate-y-1 hover:shadow-[0_25px_50px_-25px_rgba(26,44,122,0.3)]"
               >
                 <div className="relative flex h-44 items-center justify-center overflow-hidden bg-(image:--gradient-mesh) bg-navy-950">
-                  <Layers
-                    className="h-12 w-12 text-white/25 transition-transform duration-slow ease-brand group-hover:scale-110"
-                    strokeWidth={1.5}
-                  />
+                  {project.image_url ? (
+                    <Image
+                      src={project.image_url}
+                      alt={project.title}
+                      fill
+                      className="object-cover transition-transform duration-slow ease-brand group-hover:scale-110"
+                    />
+                  ) : (
+                    <Layers
+                      className="h-12 w-12 text-white/25 transition-transform duration-slow ease-brand group-hover:scale-110"
+                      strokeWidth={1.5}
+                    />
+                  )}
                   <span className="absolute right-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-navy-700">
                     {project.category}
                   </span>

@@ -2,13 +2,18 @@
   "name": "gloaro-portfolio",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "db:migrate": "node --env-file=.env.local scripts/migrate.js",
+    "db:seed": "node --env-file=.env.local scripts/seed.js",
+    "admin:hash-password": "node scripts/hash-password.js"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^1.1.0",
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.6.1",
     "cloudinary": "^2.10.0",
@@ -28,6 +33,7 @@
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.2.11",
+    "simple-icons": "^16.27.0",
     "tailwindcss": "^4"
   }
 }

@@ -1,7 +1,4 @@
 import { Geist, Geist_Mono, Sora } from "next/font/google";
-import Navbar from "@/components/Navbar/Navbar";
-import Footer from "@/components/Footer/Footer";
-import ScrollProgressBar from "@/components/ui/ScrollProgressBar";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -103,10 +100,7 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
-        <ScrollProgressBar />
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        {children}
       </body>
     </html>
   );

@@ -5,21 +5,21 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
-import { testimonials } from "@/data/testimonials";
 import { easeBrand } from "@/utils/animations";
 import { cn } from "@/utils/cn";
 
-export default function Testimonials() {
+export default function Testimonials({ testimonials }) {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
 
+  const hasMultiple = testimonials.length > 1;
   const goTo = (next) => setIndex((next + testimonials.length) % testimonials.length);
 
   useEffect(() => {
-    if (paused) return;
+    if (paused || !hasMultiple) return;
     const timer = setInterval(() => goTo(index + 1), 6000);
     return () => clearInterval(timer);
-  }, [index, paused]);
+  }, [index, paused, hasMultiple]);
 
   const current = testimonials[index];
 
@@ -61,7 +61,7 @@ export default function Testimonials() {
 
                 <div className="flex flex-col items-center gap-1">
                   <span className="flex h-12 w-12 items-center justify-center rounded-full bg-(image:--gradient-brand) font-heading text-sm font-bold text-white">
-                    {current.name.replace("[Sample] ", "").charAt(0)}
+                    {current.name.charAt(0)}
                   </span>
                   <span className="mt-2 font-heading text-sm font-bold text-foreground">
                     {current.name}
@@ -74,37 +74,41 @@ export default function Testimonials() {
             </AnimatePresence>
           </div>
 
-          <button
-            type="button"
-            aria-label="Previous testimonial"
-            onClick={() => goTo(index - 1)}
-            className="absolute left-0 top-1/2 hidden -translate-x-4 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-white p-2.5 text-foreground shadow-sm transition-colors hover:border-navy-500 hover:text-navy-700 sm:flex"
-          >
-            <ChevronLeft className="h-5 w-5" />
-          </button>
-          <button
-            type="button"
-            aria-label="Next testimonial"
-            onClick={() => goTo(index + 1)}
-            className="absolute right-0 top-1/2 hidden -translate-y-1/2 translate-x-4 items-center justify-center rounded-full border border-border bg-white p-2.5 text-foreground shadow-sm transition-colors hover:border-navy-500 hover:text-navy-700 sm:flex"
-          >
-            <ChevronRight className="h-5 w-5" />
-          </button>
-
-          <div className="mt-8 flex justify-center gap-2">
-            {testimonials.map((testimonial, i) => (
+          {hasMultiple && (
+            <>
               <button
-                key={testimonial.name + i}
                 type="button"
-                aria-label={`Go to testimonial ${i + 1}`}
-                onClick={() => goTo(i)}
-                className={cn(
-                  "h-2 rounded-full transition-all duration-base ease-brand",
-                  i === index ? "w-8 bg-navy-700" : "w-2 bg-border hover:bg-navy-300"
-                )}
-              />
-            ))}
-          </div>
+                aria-label="Previous testimonial"
+                onClick={() => goTo(index - 1)}
+                className="absolute left-0 top-1/2 hidden -translate-x-4 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-white p-2.5 text-foreground shadow-sm transition-colors hover:border-navy-500 hover:text-navy-700 sm:flex"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+              <button
+                type="button"
+                aria-label="Next testimonial"
+                onClick={() => goTo(index + 1)}
+                className="absolute right-0 top-1/2 hidden -translate-y-1/2 translate-x-4 items-center justify-center rounded-full border border-border bg-white p-2.5 text-foreground shadow-sm transition-colors hover:border-navy-500 hover:text-navy-700 sm:flex"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </button>
+
+              <div className="mt-8 flex justify-center gap-2">
+                {testimonials.map((testimonial, i) => (
+                  <button
+                    key={testimonial.name + i}
+                    type="button"
+                    aria-label={`Go to testimonial ${i + 1}`}
+                    onClick={() => goTo(i)}
+                    className={cn(
+                      "h-2 rounded-full transition-all duration-base ease-brand",
+                      i === index ? "w-8 bg-navy-700" : "w-2 bg-border hover:bg-navy-300"
+                    )}
+                  />
+                ))}
+              </div>
+            </>
+          )}
         </div>
       </Container>
     </section>
