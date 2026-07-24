@@ -9,15 +9,44 @@ import StatCounter from "@/components/ui/StatCounter";
 import { stats } from "@/data/stats";
 import { fadeInUp, staggerContainer, viewportOnce } from "@/utils/animations";
 
+const coreValues = [
+  "Innovation",
+  "Integrity",
+  "Excellence",
+  "Transparency",
+  "Collaboration",
+  "Customer Success",
+  "Continuous Learning",
+  "Sustainable Growth",
+];
+
 export default function About() {
   return (
     <section id="about" className="bg-surface-50 py-24 sm:py-32">
       <Container>
         <SectionTitle
           eyebrow="About GLOARO"
-          title="Engineering Digital Growth, Together"
-          description="GLOARO PVT LTD is a premium software development company committed to turning ambitious ideas into scalable digital products — partnering with businesses to design, build, and grow technology that lasts."
+          title="Transforming Businesses Through Innovation, Technology & Digital Connectivity"
+          description="GLOARO PVT LTD is a future-focused technology and business solutions company building a powerful digital ecosystem for entrepreneurs, startups, SMEs, retailers, professionals, and enterprises — helping businesses grow faster through technology, strategic networking, digital transformation, and innovative business services."
         />
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+          variants={fadeInUp}
+          className="mx-auto mt-10 max-w-3xl text-center"
+        >
+          <h3 className="font-heading text-h3 text-foreground">Who We Are</h3>
+          <p className="mt-3 text-body-lg text-muted">
+            We develop technology-driven platforms and business solutions
+            that improve productivity, increase market reach, strengthen
+            customer engagement, and support sustainable business growth —
+            delivering reliable, scalable, and innovative digital services
+            that help organizations succeed in an increasingly connected
+            world.
+          </p>
+        </motion.div>
 
         <motion.div
           variants={staggerContainer(0.15)}
@@ -33,10 +62,9 @@ export default function About() {
               </span>
               <h3 className="font-heading text-h3 text-foreground">Our Mission</h3>
               <p className="mt-3 text-body-lg text-muted">
-                To engineer innovative, reliable digital solutions that help
-                businesses connect with their audiences and scale with
-                confidence — guided by our founding principle: Referral,
-                Connect, Grow, Collaborate.
+                To empower businesses with innovative digital solutions,
+                trusted business networking, and technology that drives
+                measurable growth.
               </p>
             </Card>
           </motion.div>
@@ -48,12 +76,30 @@ export default function About() {
               </span>
               <h3 className="font-heading text-h3 text-foreground">Our Vision</h3>
               <p className="mt-3 text-body-lg text-muted">
-                To become a trusted global digital network — where
-                technology, collaboration, and growth move together for
-                every client we partner with.
+                To become a globally recognized business networking and
+                digital technology company that enables millions of
+                entrepreneurs and organizations to grow together.
               </p>
             </Card>
           </motion.div>
+        </motion.div>
+
+        <motion.div
+          variants={staggerContainer(0.05)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+          className="mt-8 flex flex-wrap justify-center gap-3"
+        >
+          {coreValues.map((value) => (
+            <motion.span
+              key={value}
+              variants={fadeInUp}
+              className="badge-base border border-navy-100 bg-white text-navy-700"
+            >
+              {value}
+            </motion.span>
+          ))}
         </motion.div>
 
         <motion.div
@@ -76,6 +122,21 @@ export default function About() {
             </motion.div>
           ))}
         </motion.div>
+
+        <motion.p
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+          variants={fadeInUp}
+          className="mx-auto mt-12 max-w-2xl text-center text-body-lg text-muted"
+        >
+          <span className="font-heading font-semibold text-foreground">
+            Our Commitment —{" "}
+          </span>
+          delivering high-quality digital solutions, exceptional customer
+          experiences, ethical business practices, and continuous innovation
+          that create measurable value for businesses and communities.
+        </motion.p>
       </Container>
     </section>
   );

@@ -12,7 +12,6 @@ import FAQ from "@/components/FAQ/FAQ";
 import Contact from "@/components/Contact/Contact";
 import {
   getFaqs,
-  getIndustries,
   getProcessSteps,
   getProducts,
   getProjects,
@@ -25,7 +24,6 @@ import {
 export default async function Home() {
   const [
     services,
-    industries,
     projects,
     products,
     technologyGroups,
@@ -35,7 +33,6 @@ export default async function Home() {
     faqs,
   ] = await Promise.all([
     getServices(),
-    getIndustries(),
     getProjects(),
     getProducts(),
     getTechnologyGroups(),
@@ -50,7 +47,7 @@ export default async function Home() {
       <Hero />
       <About />
       <Services services={services} />
-      <Industries industries={industries} />
+      <Industries />
       <Projects projects={projects} />
       <Products products={products} />
       <Technologies technologyGroups={technologyGroups} />

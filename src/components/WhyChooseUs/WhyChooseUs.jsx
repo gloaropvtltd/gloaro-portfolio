@@ -1,18 +1,27 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { BadgeCheck, Cpu, Headset, ShieldCheck, Users, Zap } from "lucide-react";
+import {
+  BadgeCheck,
+  Network,
+  RefreshCw,
+  ShieldCheck,
+  TrendingUp,
+  Users,
+  Zap,
+} from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
 import { fadeInUp, staggerContainer, viewportOnce } from "@/utils/animations";
 
 const iconMap = {
   users: Users,
-  cpu: Cpu,
   badge: BadgeCheck,
   shield: ShieldCheck,
-  headset: Headset,
   zap: Zap,
+  trending: TrendingUp,
+  network: Network,
+  refresh: RefreshCw,
 };
 
 export default function WhyChooseUs({ whyChooseUs }) {
@@ -20,7 +29,7 @@ export default function WhyChooseUs({ whyChooseUs }) {
     <section id="why-choose-us" className="bg-surface-50 py-24 sm:py-32">
       <Container>
         <SectionTitle
-          eyebrow="Why Choose Us"
+          eyebrow="Why Choose GLOARO"
           title="Built On Trust, Backed By Results"
           description="Here's what working with GLOARO actually feels like — from kickoff to long after launch."
         />

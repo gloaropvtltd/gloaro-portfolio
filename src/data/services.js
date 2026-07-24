@@ -1,44 +1,50 @@
 export const services = [
   {
-    icon: "code",
-    title: "Web Development",
+    icon: "network",
+    title: "GLOARO Digital Network",
     description:
-      "Fast, scalable websites and web apps built on modern frameworks — engineered for performance, SEO, and growth.",
+      "A professional business networking platform that connects entrepreneurs, generates quality opportunities, and builds long-term relationships.",
+  },
+  {
+    icon: "cart",
+    title: "GLOARO Mart",
+    description:
+      "A digital marketplace and e-commerce solution built to help retailers and brands sell online and scale revenue with confidence.",
   },
   {
     icon: "smartphone",
-    title: "Mobile Application Development",
+    title: "Software & Mobile Application Development",
     description:
-      "Native-feel iOS and Android apps that keep your users engaged, from first prototype to app-store launch.",
+      "Custom software and native-feel mobile apps engineered around your exact workflows, from first prototype to launch.",
   },
   {
-    icon: "palette",
-    title: "UI/UX Design",
+    icon: "globe",
+    title: "Website Design & Development",
     description:
-      "Interfaces that feel effortless. We design with research, motion, and accessibility at the core of every screen.",
+      "Fast, scalable websites built on modern frameworks — engineered for performance, SEO, and growth.",
+  },
+  {
+    icon: "megaphone",
+    title: "Digital Marketing & Brand Promotion",
+    description:
+      "Strategic campaigns and brand promotion that grow visibility, generate leads, and turn audiences into customers.",
+  },
+  {
+    icon: "briefcase",
+    title: "Business Consulting & Growth Strategy",
+    description:
+      "Practical strategy and consulting support that helps founders and teams build future-ready businesses.",
+  },
+  {
+    icon: "settings",
+    title: "CRM & Business Automation Solutions",
+    description:
+      "CRM and automation tools that streamline operations, strengthen customer relationships, and support sustainable growth.",
   },
   {
     icon: "cloud",
-    title: "Cloud Solutions",
+    title: "Cloud & IT Solutions",
     description:
-      "Cloud architecture, migration, and DevOps that keep your infrastructure reliable, secure, and cost-efficient.",
-  },
-  {
-    icon: "puzzle",
-    title: "Custom Software Development",
-    description:
-      "Tailored software built around your exact workflows — when off-the-shelf tools don't fit, we build what does.",
-  },
-  {
-    icon: "brain",
-    title: "AI Solutions",
-    description:
-      "Practical AI — automation, intelligent search, and custom models integrated where they actually move the needle.",
-  },
-  {
-    icon: "database",
-    title: "Data Engineering",
-    description:
-      "Data pipelines, warehousing, and ETL systems that turn scattered data into something you can actually use.",
+      "Cloud architecture, IT consulting, and infrastructure support that keep your business reliable, secure, and cost-efficient.",
   },
 ];

@@ -1,8 +1,13 @@
 export const industries = [
   {
-    icon: "cart",
-    title: "Ecommerce",
-    description: "Storefronts and checkout flows engineered to convert.",
+    icon: "store",
+    title: "Retail",
+    description: "Unified digital experiences across online and in-store.",
+  },
+  {
+    icon: "factory",
+    title: "Manufacturing",
+    description: "Operational software that connects the factory floor.",
   },
   {
     icon: "heart",
@@ -15,33 +20,43 @@ export const industries = [
     description: "Learning platforms that keep students and staff engaged.",
   },
   {
-    icon: "landmark",
-    title: "Finance",
-    description: "Reliable, secure software for fintech and financial ops.",
-  },
-  {
     icon: "building",
     title: "Real Estate",
     description: "Listing platforms and CRM tools built for property teams.",
   },
   {
-    icon: "factory",
-    title: "Manufacturing",
-    description: "Operational software that connects the factory floor.",
+    icon: "hotel",
+    title: "Hospitality",
+    description: "Booking and guest-experience platforms built for scale.",
   },
   {
-    icon: "store",
-    title: "Retail",
-    description: "Unified digital experiences across online and in-store.",
+    icon: "landmark",
+    title: "Finance",
+    description: "Reliable, secure software for fintech and financial ops.",
   },
   {
-    icon: "plane",
-    title: "Travel",
-    description: "Booking and itinerary platforms built for scale and speed.",
+    icon: "truck",
+    title: "Logistics",
+    description: "Tracking and fleet systems that keep goods moving.",
+  },
+  {
+    icon: "briefcase",
+    title: "Professional Services",
+    description: "Client and workflow tools built for service-led teams.",
+  },
+  {
+    icon: "rocket",
+    title: "Startups",
+    description: "Lean, scalable platforms built to move fast from day one.",
   },
   {
     icon: "boxes",
-    title: "SaaS",
-    description: "Multi-tenant platforms built to scale with your users.",
+    title: "Small & Medium Enterprises",
+    description: "Practical digital tools that scale as the business grows.",
+  },
+  {
+    icon: "building2",
+    title: "Corporate Organizations",
+    description: "Enterprise-grade platforms built for scale and governance.",
   },
 ];

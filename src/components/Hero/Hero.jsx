@@ -63,22 +63,23 @@ export default function Hero() {
             className="badge-base border border-white/15 bg-white/5 text-gold-300"
           >
             <SparklesIcon className="h-3.5 w-3.5" />
-            Innovative Digital Future &amp; Digital Network
+            Innovative Digital Future | Connect • Grow • Succeed
           </motion.span>
 
           <motion.h1
             variants={fadeInUp}
             className="font-heading text-hero leading-[1.05] text-white"
           >
-            Build Digital Experiences That{" "}
-            <span className="text-gradient-gold">Create Impact</span>
+            Business Networking &amp;{" "}
+            <span className="text-gradient-gold">Digital Growth</span>
           </motion.h1>
 
           <motion.p
             variants={fadeInUp}
             className="max-w-xl text-body-lg text-navy-100/85"
           >
-            Transform your ideas into scalable digital products.
+            Connecting entrepreneurs, startups, and enterprises with the
+            digital solutions and business networking that accelerate growth.
           </motion.p>
 
           <motion.div

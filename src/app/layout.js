@@ -26,17 +26,19 @@ export const metadata = {
     template: "%s | GLOARO PVT LTD",
   },
   description:
-    "GLOARO PVT LTD builds premium, enterprise-grade software, connecting businesses through innovative digital solutions.",
+    "GLOARO PVT LTD is a technology-driven business networking and digital solutions company empowering entrepreneurs, startups, SMEs, and enterprises through innovation, collaboration, and digital transformation.",
   keywords: [
     "GLOARO",
+    "business networking platform",
+    "digital solutions company",
+    "e-commerce solutions",
     "software development company",
     "web development",
     "mobile app development",
-    "SaaS development",
-    "UI/UX design",
-    "cloud solutions",
-    "AI solutions",
-    "Tamil Nadu software company",
+    "digital marketing",
+    "CRM solutions",
+    "IT consulting",
+    "Tamil Nadu business networking company",
   ],
   authors: [{ name: "GLOARO PVT LTD", url: siteUrl }],
   openGraph: {
@@ -45,13 +47,13 @@ export const metadata = {
     siteName: "GLOARO PVT LTD",
     title: "GLOARO PVT LTD | Innovative Digital Future & Digital Network",
     description:
-      "Premium software development — web, mobile, SaaS, UI/UX, cloud, and AI solutions.",
+      "Business networking, e-commerce, software, digital marketing, CRM, and IT consulting — an integrated ecosystem for business growth.",
   },
   twitter: {
     card: "summary_large_image",
     title: "GLOARO PVT LTD | Innovative Digital Future & Digital Network",
     description:
-      "Premium software development — web, mobile, SaaS, UI/UX, cloud, and AI solutions.",
+      "Business networking, e-commerce, software, digital marketing, CRM, and IT consulting — an integrated ecosystem for business growth.",
   },
   alternates: {
     canonical: siteUrl,
@@ -71,7 +73,7 @@ const organizationJsonLd = {
   url: siteUrl,
   logo: `${siteUrl}/brand/logo-mark.png`,
   description:
-    "GLOARO PVT LTD builds premium, enterprise-grade software, connecting businesses through innovative digital solutions.",
+    "GLOARO PVT LTD is a technology-driven business networking and digital solutions company empowering entrepreneurs, startups, SMEs, and enterprises through innovation, collaboration, and digital transformation.",
   address: {
     "@type": "PostalAddress",
     streetAddress:

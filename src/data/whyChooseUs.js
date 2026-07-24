@@ -1,38 +1,44 @@
 export const whyChooseUs = [
   {
     icon: "users",
-    title: "Experienced Team",
+    title: "Customer-Focused Solutions",
     description:
-      "Engineers and designers who've shipped production software across industries — not just tutorials.",
-  },
-  {
-    icon: "cpu",
-    title: "Modern Technology",
-    description:
-      "We build on a current, battle-tested stack — no legacy baggage, no outdated frameworks.",
-  },
-  {
-    icon: "badge",
-    title: "Quality Work",
-    description:
-      "Code reviews, testing, and design QA are built into every sprint, not bolted on at the end.",
-  },
-  {
-    icon: "shield",
-    title: "Security",
-    description:
-      "Secure-by-default architecture, environment isolation, and careful handling of sensitive data.",
-  },
-  {
-    icon: "headset",
-    title: "Support",
-    description:
-      "Real humans, real response times — before, during, and after launch.",
+      "Every solution is built around what actually moves your business forward.",
   },
   {
     icon: "zap",
-    title: "Fast Delivery",
+    title: "Innovative Technology",
     description:
-      "Structured sprints and clear milestones keep your project moving without cutting corners.",
+      "Continuous digital transformation that keeps you ahead, not just current.",
+  },
+  {
+    icon: "trending",
+    title: "Scalable Platforms",
+    description:
+      "Systems designed to grow with your business, not hold it back.",
+  },
+  {
+    icon: "network",
+    title: "Professional Networking Ecosystem",
+    description:
+      "A business networking platform that opens doors to real opportunities.",
+  },
+  {
+    icon: "badge",
+    title: "Reliable Service & Quality Standards",
+    description:
+      "Consistent delivery backed by clear quality standards, every time.",
+  },
+  {
+    icon: "shield",
+    title: "Trust & Transparency",
+    description:
+      "Long-term partnerships built on honesty, not just contracts.",
+  },
+  {
+    icon: "refresh",
+    title: "Continuous Innovation",
+    description:
+      "We keep improving our platforms and services so your business keeps growing.",
   },
 ];

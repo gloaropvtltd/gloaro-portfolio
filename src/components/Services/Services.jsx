@@ -1,7 +1,21 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { BrainCircuit, Cloud, Code2, Database, Palette, Puzzle, Smartphone } from "lucide-react";
+import {
+  Briefcase,
+  BrainCircuit,
+  Cloud,
+  Code2,
+  Database,
+  Globe,
+  Megaphone,
+  Network,
+  Palette,
+  Puzzle,
+  Settings,
+  Smartphone,
+  ShoppingCart,
+} from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
 import Card from "@/components/ui/Card";
@@ -15,6 +29,12 @@ const iconMap = {
   puzzle: Puzzle,
   brain: BrainCircuit,
   database: Database,
+  network: Network,
+  cart: ShoppingCart,
+  megaphone: Megaphone,
+  settings: Settings,
+  globe: Globe,
+  briefcase: Briefcase,
 };
 
 export default function Services({ services }) {
@@ -22,9 +42,9 @@ export default function Services({ services }) {
     <section id="services" className="bg-white py-24 sm:py-32">
       <Container>
         <SectionTitle
-          eyebrow="What We Do"
-          title="Services Built For Scale"
-          description="From first prototype to enterprise platform, GLOARO delivers the full stack of digital capability under one roof."
+          eyebrow="Our Business Divisions"
+          title="An Integrated Business Ecosystem"
+          description="Comprehensive digital solutions designed to support every stage of business growth — all under one roof."
         />
 
         <motion.div
