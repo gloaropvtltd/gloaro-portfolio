@@ -115,5 +115,18 @@ CREATE TABLE IF NOT EXISTS contact_submissions (
   service TEXT,
   message TEXT NOT NULL,
   is_read BOOLEAN NOT NULL DEFAULT false,
-  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  lead_score INTEGER,
+  lead_urgency TEXT,
+  lead_tags TEXT[],
+  lead_summary TEXT,
+  lead_draft_reply TEXT,
+  lead_call_brief TEXT
 );
+
+ALTER TABLE contact_submissions ADD COLUMN IF NOT EXISTS lead_score INTEGER;
+ALTER TABLE contact_submissions ADD COLUMN IF NOT EXISTS lead_urgency TEXT;
+ALTER TABLE contact_submissions ADD COLUMN IF NOT EXISTS lead_tags TEXT[];
+ALTER TABLE contact_submissions ADD COLUMN IF NOT EXISTS lead_summary TEXT;
+ALTER TABLE contact_submissions ADD COLUMN IF NOT EXISTS lead_draft_reply TEXT;
+ALTER TABLE contact_submissions ADD COLUMN IF NOT EXISTS lead_call_brief TEXT;

@@ -1,6 +1,7 @@
 import { Resend } from "resend";
 import { isRateLimited } from "@/utils/rateLimit";
 import { sql } from "@/utils/db";
+import { scoreLead } from "@/utils/ai";
 
 const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 const MAX_LENGTHS = { name: 100, email: 254, company: 100, phone: 30, service: 60, message: 5000 };
@@ -52,10 +53,27 @@ export async function POST(request) {
     }
   }
 
+  let lead = null;
+  if (process.env.GROQ_API_KEY) {
+    try {
+      lead = await scoreLead({
+        name: name.trim(),
+        company: company?.trim(),
+        phone: phone?.trim(),
+        service: service?.trim(),
+        message: message.trim(),
+      });
+    } catch (error) {
+      // Lead scoring is an enhancement, not a requirement — a submission
+      // must still go through even if the model call fails.
+      console.error("Lead scoring failed:", error);
+    }
+  }
+
   try {
     await sql`
-      INSERT INTO contact_submissions (name, email, company, phone, service, message)
-      VALUES (${name.trim()}, ${email.trim()}, ${company?.trim() || null}, ${phone?.trim() || null}, ${service?.trim() || null}, ${message.trim()})
+      INSERT INTO contact_submissions (name, email, company, phone, service, message, lead_score, lead_urgency, lead_tags, lead_summary, lead_draft_reply, lead_call_brief)
+      VALUES (${name.trim()}, ${email.trim()}, ${company?.trim() || null}, ${phone?.trim() || null}, ${service?.trim() || null}, ${message.trim()}, ${lead?.score ?? null}, ${lead?.urgency ?? null}, ${lead?.tags ?? null}, ${lead?.summary ?? null}, ${lead?.draftReply ?? null}, ${lead?.callBrief ?? null})
     `;
   } catch (error) {
     // Don't block sending the email just because the database isn't
@@ -76,13 +94,18 @@ export async function POST(request) {
       from: process.env.RESEND_FROM_EMAIL || "GLOARO Website <onboarding@resend.dev>",
       to: process.env.CONTACT_EMAIL_TO || "info@gloaro.com",
       replyTo: email.trim(),
-      subject: `New project inquiry from ${name.trim()}`,
+      subject: lead
+        ? `[${lead.urgency.toUpperCase()}] New project inquiry from ${name.trim()}`
+        : `New project inquiry from ${name.trim()}`,
       text: [
         `Name: ${name.trim()}`,
         `Email: ${email.trim()}`,
         company?.trim() ? `Company: ${company.trim()}` : null,
         phone?.trim() ? `Phone: ${phone.trim()}` : null,
         service?.trim() ? `Service: ${service.trim()}` : null,
+        lead ? `Lead score: ${lead.score}/100 (${lead.urgency} urgency)` : null,
+        lead?.tags?.length ? `Tags: ${lead.tags.join(", ")}` : null,
+        lead?.summary ? `Brief: ${lead.summary}` : null,
         "",
         "Message:",
         message.trim(),

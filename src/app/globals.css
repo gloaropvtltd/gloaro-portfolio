@@ -215,6 +215,34 @@ h4,
     color-mix(in srgb, var(--color-navy-700) 25%, transparent);
 }
 
+.flip-card {
+  perspective: 1800px;
+}
+
+.flip-card-inner {
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.flip-card-flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-card-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flip-card-inner {
+    transition: none;
+  }
+}
+
 .badge-base {
   display: inline-flex;
   align-items: center;
