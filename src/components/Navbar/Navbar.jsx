@@ -54,7 +54,7 @@ export default function Navbar() {
 
           <div className="hidden lg:block">
             <Button as="a" href="/#contact" variant="primary" size="sm">
-              Start a Project
+              Book an Appointment
             </Button>
           </div>
 
@@ -102,7 +102,7 @@ export default function Navbar() {
                   className="w-full"
                   onClick={() => setOpen(false)}
                 >
-                  Start a Project
+                  Book an Appointment
                 </Button>
               </div>
             </Container>

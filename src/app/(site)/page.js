@@ -8,6 +8,8 @@ import Technologies from "@/components/Technologies/Technologies";
 import Process from "@/components/Process/Process";
 import WhyChooseUs from "@/components/WhyChooseUs/WhyChooseUs";
 import Testimonials from "@/components/Testimonials/Testimonials";
+import Blog from "@/components/Blog/Blog";
+import SuccessStories from "@/components/SuccessStories/SuccessStories";
 import FAQ from "@/components/FAQ/FAQ";
 import Contact from "@/components/Contact/Contact";
 import {
@@ -54,6 +56,8 @@ export default async function Home() {
       <Process processSteps={processSteps} />
       <WhyChooseUs whyChooseUs={whyChooseUs} />
       <Testimonials testimonials={testimonials} />
+      <Blog />
+      <SuccessStories />
       <FAQ faqs={faqs} />
       <Contact />
     </>

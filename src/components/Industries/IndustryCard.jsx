@@ -138,6 +138,8 @@ export default function IndustryCard({
           <button
             type="button"
             onClick={() => onSelect(industry.id)}
+            onMouseEnter={() => onSelect(industry.id)}
+            onFocus={() => onSelect(industry.id)}
             aria-expanded={active}
             aria-controls={panelId}
             aria-label={`${active ? "Currently expanded — " : "Expand "}${industry.title} industry solutions`}
