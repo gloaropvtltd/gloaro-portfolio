@@ -63,7 +63,7 @@ export default function Hero() {
             className="badge-base border border-white/15 bg-white/5 text-gold-300"
           >
             <SparklesIcon className="h-3.5 w-3.5" />
-            Innovative Digital Future | Connect • Grow • Succeed
+            GLOARO — Innovative Digital Future | Connect • Grow • Succeed
           </motion.span>
 
           <motion.h1

@@ -5,6 +5,6 @@ export default function robots() {
       allow: "/",
       disallow: ["/admin", "/api/"],
     },
-    sitemap: "https://www.gloaro.com/sitemap.xml",
+    sitemap: "https://www.gloaro.in/sitemap.xml",
   };
 }

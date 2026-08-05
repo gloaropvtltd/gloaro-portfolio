@@ -10,6 +10,22 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "gloaro.com" }],
+        destination: "https://www.gloaro.in/:path*",
+        permanent: true,
+      },
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.gloaro.com" }],
+        destination: "https://www.gloaro.in/:path*",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
