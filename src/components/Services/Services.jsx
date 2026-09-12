@@ -19,6 +19,7 @@ import {
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
 import Card from "@/components/ui/Card";
+import Button from "@/components/ui/Button";
 import { fadeInUp, staggerContainer, viewportOnce } from "@/utils/animations";
 
 const iconMap = {
@@ -69,6 +70,12 @@ export default function Services({ services }) {
             );
           })}
         </motion.div>
+
+        <div className="mt-12 flex justify-center">
+          <Button as="a" href="/services" variant="outline" size="md">
+            View All Services
+          </Button>
+        </div>
       </Container>
     </section>
   );

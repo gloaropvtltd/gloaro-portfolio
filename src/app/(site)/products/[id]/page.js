@@ -2,6 +2,41 @@ import { notFound } from "next/navigation";
 import ProductDetail from "@/components/Products/ProductDetail";
 import { getProductById, getProducts } from "@/utils/content";
 
+const siteUrl = "https://www.gloaro.in";
+
+function buildCaseStudyJsonLd(product, id) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: product.title,
+    description: product.description,
+    image: product.image_url ? `${siteUrl}${product.image_url}` : undefined,
+    url: `${siteUrl}/products/${id}`,
+    creator: {
+      "@type": "Organization",
+      name: "GLOARO PVT LTD",
+      url: siteUrl,
+    },
+  };
+}
+
+function buildBreadcrumbJsonLd(product, id) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+      { "@type": "ListItem", position: 2, name: "Products", item: `${siteUrl}/#products` },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: product.title,
+        item: `${siteUrl}/products/${id}`,
+      },
+    ],
+  };
+}
+
 export async function generateStaticParams() {
   const products = await getProducts();
   return products.map((product) => ({ id: String(product.id) }));
@@ -38,5 +73,20 @@ export default async function ProductDetailPage({ params }) {
 
   if (!product) notFound();
 
-  return <ProductDetail product={product} />;
+  const caseStudyJsonLd = buildCaseStudyJsonLd(product, id);
+  const breadcrumbJsonLd = buildBreadcrumbJsonLd(product, id);
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(caseStudyJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <ProductDetail product={product} />
+    </>
+  );
 }

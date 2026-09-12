@@ -1,6 +1,10 @@
 import AdminSidebar from "@/components/Admin/AdminSidebar";
 import { AdminThemeProvider } from "@/components/Admin/AdminThemeProvider";
 
+export const metadata = {
+  robots: { index: false, follow: false },
+};
+
 export default function AdminDashboardLayout({ children }) {
   return (
     <AdminThemeProvider>

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Layers } from "lucide-react";
 import Container from "@/components/ui/Container";
+import Button from "@/components/ui/Button";
 import IndustryCard from "@/components/Industries/IndustryCard";
 import { industriesShowcase } from "@/data/industriesShowcase";
 import { fadeInUp, staggerContainer, viewportOnce } from "@/utils/animations";
@@ -55,8 +56,7 @@ export default function Industries() {
           </motion.h2>
 
           <motion.p variants={fadeInUp} className="text-body-lg text-navy-100/75">
-            AI-driven digital transformation solutions tailored for businesses across
-            every industry.
+            Digital transformation solutions tailored for the industries we serve.
           </motion.p>
         </motion.div>
 
@@ -132,6 +132,18 @@ export default function Industries() {
               )}
             </button>
           ))}
+        </div>
+
+        <div className="mt-10 flex justify-center">
+          <Button
+            as="a"
+            href="/industries"
+            variant="outline"
+            size="md"
+            className="border-white/25 text-white hover:border-white hover:text-white"
+          >
+            View All Industries
+          </Button>
         </div>
       </Container>
     </section>

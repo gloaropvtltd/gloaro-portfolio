@@ -69,8 +69,13 @@ export default function Footer({ socialLinks = footerSocialLinks }) {
               </h3>
               <ul className="flex flex-col gap-3">
                 {footerServices.map((service) => (
-                  <li key={service} className="text-sm text-navy-100/80">
-                    {service}
+                  <li key={service.label}>
+                    <a
+                      href={service.href}
+                      className="text-sm text-navy-100/80 transition-colors hover:text-white"
+                    >
+                      {service.label}
+                    </a>
                   </li>
                 ))}
               </ul>

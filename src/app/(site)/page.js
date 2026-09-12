@@ -13,6 +13,7 @@ import SuccessStories from "@/components/SuccessStories/SuccessStories";
 import FAQ from "@/components/FAQ/FAQ";
 import Contact from "@/components/Contact/Contact";
 import {
+  getBlogPosts,
   getFaqs,
   getProcessSteps,
   getProducts,
@@ -22,6 +23,21 @@ import {
   getTestimonials,
   getWhyChooseUs,
 } from "@/utils/content";
+
+function buildFaqJsonLd(faqs) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+}
 
 export default async function Home() {
   const [
@@ -33,6 +49,7 @@ export default async function Home() {
     whyChooseUs,
     testimonials,
     faqs,
+    blogPosts,
   ] = await Promise.all([
     getServices(),
     getProjects(),
@@ -42,10 +59,19 @@ export default async function Home() {
     getWhyChooseUs(),
     getTestimonials(),
     getFaqs(),
+    getBlogPosts(),
   ]);
+
+  const faqJsonLd = buildFaqJsonLd(faqs);
 
   return (
     <>
+      {faqs.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
       <Hero />
       <About />
       <Services services={services} />
@@ -56,7 +82,7 @@ export default async function Home() {
       <Process processSteps={processSteps} />
       <WhyChooseUs whyChooseUs={whyChooseUs} />
       <Testimonials testimonials={testimonials} />
-      <Blog />
+      <Blog posts={blogPosts.slice(0, 3)} />
       <SuccessStories />
       <FAQ faqs={faqs} />
       <Contact />

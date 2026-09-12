@@ -41,20 +41,21 @@ export const socialIconMap = {
 };
 
 export const footerServices = [
-  "Web Development",
-  "Mobile Application Development",
-  "UI/UX Design",
-  "Cloud Solutions",
-  "Custom Software Development",
-  "AI Solutions",
-  "Data Engineering",
+  { label: "Web Development", href: "/services/web-development" },
+  { label: "Mobile Application Development", href: "/services/mobile-app-development" },
+  { label: "UI/UX Design", href: "/services" },
+  { label: "Cloud Solutions", href: "/services" },
+  { label: "Custom Software Development", href: "/services/software-development" },
+  { label: "AI Solutions", href: "/services" },
+  { label: "Data Engineering", href: "/services" },
 ];
 
 export const footerCompanyLinks = [
-  { label: "About Us", href: "/#about" },
+  { label: "About Us", href: "/about" },
+  { label: "Products", href: "/products" },
   { label: "Projects", href: "/#projects" },
   { label: "Careers", href: "/#contact" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const footerSocialLinks = [

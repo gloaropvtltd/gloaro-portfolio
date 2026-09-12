@@ -326,6 +326,35 @@ h4,
   mix-blend-mode: overlay;
 }
 
+/* Hero entrance. CSS rather than JS so the LCP heading paints on first frame
+   instead of waiting for hydration — keep in sync with fadeInUp in utils/animations.js. */
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero-stagger > * {
+  animation: hero-fade-up 0.6s var(--ease-brand) backwards;
+}
+.hero-stagger > *:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.hero-stagger > *:nth-child(2) {
+  animation-delay: 0.24s;
+}
+.hero-stagger > *:nth-child(3) {
+  animation-delay: 0.38s;
+}
+.hero-stagger > *:nth-child(4) {
+  animation-delay: 0.52s;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

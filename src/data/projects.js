@@ -23,7 +23,7 @@ export const projects = [
     title: "AI-Powered CRM Customization",
     category: "SaaS Platform",
     description:
-      "A CRM tailored to a sales team's exact pipeline, enhanced with AI-driven lead scoring and automated follow-up suggestions.",
+      "A sales CRM rebuilt around one team's exact pipeline stages, with AI-assisted lead scoring and automatic follow-up reminders layered on top.",
     tags: ["CRM", "AI", "Automation"],
     link: "#contact",
     image_url: "/projects/crm-ai.png",
@@ -32,7 +32,7 @@ export const projects = [
     title: "POS & Billing System",
     category: "SaaS Platform",
     description:
-      "A point-of-sale and billing platform built for retail and hospitality — inventory sync, invoicing, and real-time sales reporting.",
+      "A retail and hospitality point-of-sale build covering invoicing, live inventory sync, and day-to-day sales reporting in one system.",
     tags: ["POS", "Billing", "Retail Tech"],
     link: "#contact",
     image_url: "/projects/pos-billing.png",
@@ -41,7 +41,7 @@ export const projects = [
     title: "HR Management System",
     category: "SaaS Platform",
     description:
-      "An all-in-one HR platform covering onboarding, attendance, payroll, and performance reviews in a single dashboard.",
+      "An internal HR platform bringing onboarding, attendance tracking, and payroll into a single dashboard for one growing organization.",
     tags: ["HR Tech", "Payroll", "Workflow"],
     link: "#contact",
     image_url: "/projects/hr-system.png",

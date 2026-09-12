@@ -99,6 +99,19 @@ CREATE TABLE IF NOT EXISTS social_links (
   created_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
+CREATE TABLE IF NOT EXISTS blog_posts (
+  id SERIAL PRIMARY KEY,
+  title TEXT NOT NULL,
+  slug TEXT NOT NULL UNIQUE,
+  excerpt TEXT NOT NULL,
+  content TEXT NOT NULL,
+  cover_image_url TEXT,
+  author TEXT NOT NULL DEFAULT 'GLOARO Team',
+  published BOOLEAN NOT NULL DEFAULT true,
+  published_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
 CREATE TABLE IF NOT EXISTS admin_users (
   id SERIAL PRIMARY KEY,
   email TEXT NOT NULL UNIQUE,

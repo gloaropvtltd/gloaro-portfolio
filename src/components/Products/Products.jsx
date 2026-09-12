@@ -15,6 +15,7 @@ import {
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
 import FlipCard from "@/components/Products/FlipCard";
+import Button from "@/components/ui/Button";
 import { fadeInUp, staggerContainer, viewportOnce } from "@/utils/animations";
 
 const iconMap = {
@@ -65,6 +66,18 @@ export default function Products({ products }) {
             );
           })}
         </motion.div>
+
+        <div className="mt-12 flex justify-center">
+          <Button
+            as="a"
+            href="/products"
+            variant="outline"
+            size="md"
+            className="border-white/25 text-white hover:border-white hover:text-white"
+          >
+            View All Products
+          </Button>
+        </div>
       </Container>
     </section>
   );

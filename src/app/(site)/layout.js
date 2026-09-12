@@ -3,6 +3,7 @@ import Footer from "@/components/Footer/Footer";
 import ScrollProgressBar from "@/components/ui/ScrollProgressBar";
 import WhatsappFloat from "@/components/ui/WhatsappFloat";
 import CallFloat from "@/components/ui/CallFloat";
+import GoogleAnalytics from "@/components/Analytics/GoogleAnalytics";
 import { getSocialLinks } from "@/utils/content";
 
 const siteUrl = "https://www.gloaro.in";
@@ -21,7 +22,7 @@ function buildOrganizationJsonLd(socialLinks) {
 
   return {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": ["Organization", "LocalBusiness"],
     name: "GLOARO PVT LTD",
     alternateName: "GLOARO",
     url: siteUrl,
@@ -47,9 +48,19 @@ function buildOrganizationJsonLd(socialLinks) {
   };
 }
 
+function buildWebsiteJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "GLOARO PVT LTD",
+    url: siteUrl,
+  };
+}
+
 export default async function SiteLayout({ children }) {
   const socialLinks = await getSocialLinks();
   const organizationJsonLd = buildOrganizationJsonLd(socialLinks);
+  const websiteJsonLd = buildWebsiteJsonLd();
 
   return (
     <>
@@ -57,6 +68,11 @@ export default async function SiteLayout({ children }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+      />
+      <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_ID} />
       <ScrollProgressBar />
       <Navbar />
       <main className="flex-1">{children}</main>

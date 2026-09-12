@@ -1,37 +1,8 @@
-// Dummy data for the premium "Industries We Empower" showcase.
-// Self-contained by design — swap for a CMS-backed source later if needed.
+// Industries GLOARO genuinely serves, with services/tech grounded in what's
+// actually offered (src/data/services.js, src/data/technologies.js) and in
+// delivered case studies (src/data/products.js) — not aspirational claims.
 
 export const industriesShowcase = [
-  {
-    id: "education",
-    icon: "graduationCap",
-    title: "Education",
-    description:
-      "AI-powered learning platforms that personalize education and keep students, teachers, and institutions connected.",
-    keyServices: [
-      "AI Automation",
-      "Mobile App",
-      "LMS Platforms",
-      "Cloud Migration",
-      "Analytics Dashboard",
-    ],
-    techStack: ["React", "Next.js", "Node.js", "AI/ML", "Cloud"],
-  },
-  {
-    id: "healthcare",
-    icon: "heartPulse",
-    title: "Healthcare",
-    description:
-      "Secure, compliant digital health platforms with AI-assisted diagnostics for patient-first care at scale.",
-    keyServices: [
-      "AI Diagnostics",
-      "Mobile App",
-      "EHR Systems",
-      "Cloud Migration",
-      "Telemedicine",
-    ],
-    techStack: ["React", "Node.js", "AI/ML", "Cloud", "PostgreSQL"],
-  },
   {
     id: "retail",
     icon: "store",
@@ -39,103 +10,68 @@ export const industriesShowcase = [
     description:
       "Modern digital storefronts and checkout experiences engineered to convert, from browse to purchase.",
     keyServices: [
-      "AI Automation",
-      "Mobile App",
       "E-Commerce",
-      "CRM",
-      "Inventory Systems",
+      "Inventory & POS Systems",
+      "CRM & Automation",
+      "Web Development",
     ],
-    techStack: ["Next.js", "Node.js", "AI/ML", "Cloud", "PostgreSQL"],
+    techStack: ["Next.js", "Node.js", "PostgreSQL", "Cloud (AWS/Vercel)"],
   },
   {
     id: "manufacturing",
     icon: "factory",
     title: "Manufacturing",
     description:
-      "Smart factory software that connects the shop floor to the boardroom with real-time operational intelligence.",
+      "Operational and business-management software that connects teams and streamlines day-to-day manufacturing operations.",
     keyServices: [
-      "IoT Integration",
-      "ERP",
-      "Automation",
-      "Cloud Migration",
-      "Predictive Maintenance",
+      "Business Automation",
+      "Software Development",
+      "CRM & Automation",
+      "Cloud & IT Solutions",
     ],
-    techStack: ["React", "Node.js", "Python", "AI/ML", "Cloud"],
-  },
-  {
-    id: "finance",
-    icon: "landmark",
-    title: "Finance",
-    description:
-      "Reliable, secure digital banking and fintech platforms built for compliance, speed, and trust.",
-    keyServices: [
-      "AI Automation",
-      "Mobile App",
-      "CRM",
-      "Cloud Migration",
-      "Fraud Detection",
-    ],
-    techStack: ["React", "Node.js", "AI/ML", "PostgreSQL", "AWS"],
+    techStack: ["React", "Node.js", "PostgreSQL", "Cloud (AWS/GCP)"],
   },
   {
     id: "real-estate",
     icon: "building2",
     title: "Real Estate",
     description:
-      "Smart building and property platforms with listing, CRM, and virtual-tour tools built for property teams.",
+      "Listing platforms and CRM tools built for property and real-estate teams.",
     keyServices: [
-      "CRM",
-      "Mobile App",
-      "Property Management",
-      "Cloud Migration",
-      "Virtual Tours",
+      "CRM & Automation",
+      "Web Development",
+      "Mobile App Development",
+      "Cloud & IT Solutions",
     ],
-    techStack: ["React", "Next.js", "Node.js", "Cloud", "MongoDB"],
-  },
-  {
-    id: "logistics",
-    icon: "truck",
-    title: "Logistics",
-    description:
-      "Warehouse and delivery platforms with live tracking and route intelligence that keep goods moving.",
-    keyServices: [
-      "Fleet Tracking",
-      "AI Automation",
-      "ERP",
-      "Cloud Migration",
-      "Route Optimization",
-    ],
-    techStack: ["React", "Node.js", "AI/ML", "Cloud", "GraphQL"],
+    techStack: ["React", "Next.js", "Node.js", "Cloud (AWS/GCP)"],
   },
   {
     id: "hospitality",
     icon: "hotel",
     title: "Hospitality",
     description:
-      "Luxury booking and guest-experience platforms with AI concierge tools built for scale and comfort.",
+      "Booking and guest-experience platforms built to scale with your hospitality business.",
     keyServices: [
-      "Booking Platforms",
-      "Mobile App",
-      "CRM",
-      "Cloud Migration",
-      "AI Concierge",
+      "Web Development",
+      "Mobile App Development",
+      "CRM & Automation",
+      "Cloud & IT Solutions",
     ],
-    techStack: ["Next.js", "Node.js", "AI/ML", "Cloud", "PostgreSQL"],
+    techStack: ["Next.js", "Node.js", "PostgreSQL", "Cloud (AWS/Vercel)"],
   },
   {
     id: "startups",
     icon: "rocket",
     title: "Startups",
     description:
-      "Lean, scalable MVPs and growth platforms built to move fast without breaking on day one.",
+      "Lean, scalable MVPs and growth platforms built to help startups move fast without breaking.",
     keyServices: [
-      "MVP Development",
-      "Cloud Migration",
-      "AI Automation",
-      "Mobile App",
-      "Growth Analytics",
+      "MVP & Software Development",
+      "Web Development",
+      "Mobile App Development",
+      "Cloud & IT Solutions",
     ],
-    techStack: ["React", "Next.js", "Node.js", "AI/ML", "Cloud"],
+    techStack: ["React", "Next.js", "Node.js", "Cloud (AWS/Vercel)"],
   },
   {
     id: "smes",
@@ -144,13 +80,12 @@ export const industriesShowcase = [
     description:
       "Practical digital tools that scale as small and medium enterprises grow — no unnecessary overhead.",
     keyServices: [
-      "ERP",
-      "CRM",
-      "Mobile App",
-      "Cloud Migration",
-      "AI Automation",
+      "CRM & Automation",
+      "Web Development",
+      "Cloud & IT Solutions",
+      "Business Consulting",
     ],
-    techStack: ["React", "Node.js", "Cloud", "PostgreSQL", "Docker"],
+    techStack: ["React", "Node.js", "PostgreSQL", "Docker"],
   },
   {
     id: "corporate",
@@ -159,27 +94,11 @@ export const industriesShowcase = [
     description:
       "Enterprise-grade platforms built for scale, governance, and seamless cross-team collaboration.",
     keyServices: [
-      "ERP",
-      "CRM",
-      "Cloud Migration",
-      "AI Automation",
-      "Workflow Systems",
+      "Software Development",
+      "HR & Workflow Systems",
+      "CRM & Automation",
+      "Cloud & IT Solutions",
     ],
-    techStack: ["React", "Node.js", "AI/ML", "Cloud", "AWS"],
-  },
-  {
-    id: "government",
-    icon: "flag",
-    title: "Government",
-    description:
-      "Smart city and public-sector platforms engineered for accessibility, security, and public trust.",
-    keyServices: [
-      "Smart City Systems",
-      "Cloud Migration",
-      "Data Security",
-      "Mobile App",
-      "AI Automation",
-    ],
-    techStack: ["React", "Node.js", "Cloud", "PostgreSQL", "AI/ML"],
+    techStack: ["React", "Node.js", "PostgreSQL", "Cloud (AWS)"],
   },
 ];

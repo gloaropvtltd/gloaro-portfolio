@@ -1,14 +1,12 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowRight, Sparkles as SparklesIcon } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import HeroCanvasWrapper from "@/components/Hero/HeroCanvasWrapper";
-import { fadeInUp, staggerContainer } from "@/utils/animations";
 
 export default function Hero() {
   const sectionRef = useRef(null);
@@ -52,40 +50,23 @@ export default function Hero() {
       />
 
       <Container className="relative z-10">
-        <motion.div
-          variants={staggerContainer(0.14, 0.1)}
-          initial="hidden"
-          animate="visible"
-          className="mx-auto flex max-w-3xl flex-col items-center gap-7 py-32 text-center"
-        >
-          <motion.span
-            variants={fadeInUp}
-            className="badge-base border border-white/15 bg-white/5 text-gold-300"
-          >
+        <div className="hero-stagger mx-auto flex max-w-3xl flex-col items-center gap-7 py-32 text-center">
+          <span className="badge-base border border-white/15 bg-white/5 text-gold-300">
             <SparklesIcon className="h-3.5 w-3.5" />
             GLOARO — Innovative Digital Future | Connect • Grow • Succeed
-          </motion.span>
+          </span>
 
-          <motion.h1
-            variants={fadeInUp}
-            className="font-heading text-hero leading-[1.05] text-white"
-          >
+          <h1 className="font-heading text-hero leading-[1.05] text-white">
             Business Networking &amp;{" "}
             <span className="text-gradient-gold">Digital Growth</span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            variants={fadeInUp}
-            className="max-w-xl text-body-lg text-navy-100/85"
-          >
+          <p className="max-w-xl text-body-lg text-navy-100/85">
             Connecting entrepreneurs, startups, and enterprises with the
             digital solutions and business networking that accelerate growth.
-          </motion.p>
+          </p>
 
-          <motion.div
-            variants={fadeInUp}
-            className="flex flex-col gap-4 pt-2 sm:flex-row"
-          >
+          <div className="flex flex-col gap-4 pt-2 sm:flex-row">
             <Button as="a" href="#contact" variant="gold" size="lg">
               Start Project
               <ArrowRight className="h-4 w-4" />
@@ -99,8 +80,8 @@ export default function Hero() {
             >
               View Portfolio
             </Button>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </Container>
     </section>
   );

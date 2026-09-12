@@ -126,7 +126,7 @@ export default function FlipCard({
               onClick={(event) => event.stopPropagation()}
               className="group/cta mt-6 inline-flex w-fit items-center gap-2 self-start rounded-full bg-gold-500 px-5 py-2.5 text-sm font-semibold text-ink-950 shadow-lg shadow-black/20 transition-all duration-base ease-brand hover:bg-gold-400 hover:shadow-gold-500/30"
             >
-              Learn More
+              Learn More<span className="sr-only"> about {title}</span>
               <ArrowUpRight className="h-4 w-4 transition-transform duration-base ease-brand group-hover/cta:translate-x-0.5 group-hover/cta:-translate-y-0.5" />
             </Link>
           </div>

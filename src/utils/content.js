@@ -64,6 +64,27 @@ export async function getFaqs() {
   }
 }
 
+export async function getBlogPosts() {
+  try {
+    return await sql`
+      SELECT * FROM blog_posts WHERE published = true ORDER BY published_at DESC, id DESC
+    `;
+  } catch {
+    return [];
+  }
+}
+
+export async function getBlogPostBySlug(slug) {
+  try {
+    const [row] = await sql`
+      SELECT * FROM blog_posts WHERE slug = ${slug} AND published = true
+    `;
+    return row ?? null;
+  } catch {
+    return null;
+  }
+}
+
 export async function getServices() {
   try {
     const rows = await sql`SELECT * FROM services ORDER BY sort_order ASC, id ASC`;
