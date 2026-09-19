@@ -26,7 +26,7 @@ export const metadata = {
     template: "%s | GLOARO PVT LTD",
   },
   description:
-    "GLOARO PVT LTD is a technology-driven business networking and digital solutions company empowering entrepreneurs, startups, SMEs, and enterprises through innovation, collaboration, and digital transformation.",
+    "GLOARO PVT LTD is a technology-driven business networking and digital solutions company empowering entrepreneurs, startups, SMEs, and enterprises.",
   keywords: [
     "GLOARO",
     "business networking platform",
